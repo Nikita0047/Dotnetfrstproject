@@ -1,14 +1,44 @@
-﻿<h1>TaskLists</h1>
+﻿@model List<TaskList>
+
+<h1>TaskLists</h1>
+<div class="row pd-2 ">
+	<div class="col-6">
+	</div>
+	<div class="col-6" text-end>
+		<a asp-controller="Tasks" asp-action="Create" class="btn btn-primary">
+			<i class="bi bi-clipboard2-plus-fill"></i> Create New Task
+		</a>
+	</div>
+</div>
+
+@* // made a table  *@
 <table class="table table-bordered table-striped">
-	<tr>
-		<th>
-			 Task Name
-		</th>
-		<th>
-			Priority
-		</th>
-		<th>
-			isCompleted
-		</th>
-	</tr>
+	<thead>
+		<tr>
+			<th>
+				 Name
+			</th>
+			<th>
+				Priority
+			</th>
+			<th>
+				isCompleted
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		@* run the foreach loop for iterating through all items persented in table*@
+		@foreach (var obj in Model.OrderBy(u=>u.Priority) )
+		{
+			<tr>
+				<td>@obj.Name</td>
+			    <td>@obj.Priority</td>
+			    <td>@obj.isCompleted</td>
+
+				<div class="w-75 btn-group" role="group">
+
+				</div>
+			</tr>  
+		}
+	</tbody>
 </table>
