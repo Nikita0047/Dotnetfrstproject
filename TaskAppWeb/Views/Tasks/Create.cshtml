@@ -3,16 +3,29 @@
 <h1>Create Task</h1>
 <form method="post" class="row">
 	<div class="border p-3">
-		<div>
-			<input asp-for="Name" />
-			<label asp-for="Name" class="control-label">Task Name</label>
+		<div class="form-floating py-2 col-12">
+			<input asp-for="Name" class="form-control border-0 shadow"/>
+			<label asp-for="Name" class="ms-2"></label>
+			<span asp-validation-for="Name" class="text-danger"></span>
 		</div>
-		<div>
-			<input asp-for="Priority" />
-			<label asp-for="Priority" class="control-label">Priority</label>
+		<div class=" form-floating py-2 col-12">
+			<input asp-for="Priority" class="form-control border-0 shadow" />
+			<label asp-for="Priority" class="ms-2">Priority</label>
+			<span asp-validation-for="Priority" class="text-danger"></span>
 		</div>
-		<div> 
-			<button type="submit">Create Task</button>
+		<div class="form-floating py-2 col-12">
+			<input asp-for="isCompleted" class="form-check-label" />
+			<label asp-for="isCompleted" class="ms-1">isCompelete</label>
+		</div>
+		<div class="row">
+			<div class="col-6 col-md-3">
+			<button type="submit" class="form-control">Create Task</button>
+			</div>
+			<div class="col-6 col-md-3"> 
+				<a asp-controller="Tasks" asp-action="Index" class=" btn btn-primary border form-control">
+					Back to List
+				</a>
+			</div>
 		</div>
 	</div>
 </form>

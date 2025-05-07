@@ -1,10 +1,17 @@
 ﻿@model List<TaskList>
+<div class="card shadow border-0 mt-4">
+	<div class="row">
+		<div class=" col-12 text-center">
+			<h2 class=" text-white py2"> TaskList </h2>
+		</div>
+	</div>
+</div>
 
-<h1>TaskLists</h1>
-<div class="row pd-2 ">
+@* <div class="card-body p-4"> *@
+<div class="row pb-3">
 	<div class="col-6">
 	</div>
-	<div class="col-6" text-end>
+	<div class="col-6 text-end">
 		<a asp-controller="Tasks" asp-action="Create" class="btn btn-primary">
 			<i class="bi bi-clipboard2-plus-fill"></i> Create New Task
 		</a>
@@ -34,10 +41,17 @@
 				<td>@obj.Name</td>
 			    <td>@obj.Priority</td>
 			    <td>@obj.isCompleted</td>
-
-				<div class="w-75 btn-group" role="group">
-
+				@* // we can add button under td  *@
+				<td>
+				<div class="w-35 btn-group" role="group">
+					<a asp-controller="Category" asp-action="Edit" asp-route-id="@obj.Id" class="btn btn-outline-secondary mx-2">
+						<i class="bi bi-pencil"></i> 
+					</a>
+					<a asp-controller="Category" asp-action="Delete" asp-route-id="@obj.Id" class="btn btn-outline-danger mx-2">
+						<i class="bi bi-trash"></i> 
+					</a>
 				</div>
+				</td>
 			</tr>  
 		}
 	</tbody>
