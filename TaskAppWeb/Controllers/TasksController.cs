@@ -61,6 +61,33 @@ namespace TaskAppWeb.Controllers
             return View(obj);
         }
 
+        public IActionResult Delete(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+            TaskList? taskFromDb = _db.TaskLists.Find(id);
+            if (taskFromDb == null)
+            {
+                return NotFound();
+            }
+            return View(taskFromDb);
+        }
+        [HttpPost]
+        [ActionName("Delete")]//this is the name of the action method
+        public IActionResult DeletePOST(int? id)
+        {
+            TaskList? obj = _db.TaskLists.Find(id);
+            if(obj == null)
+            {
+                return NotFound();
+            }
+               _db.TaskLists.Remove(obj);//keep tracks what added to database
+                _db.SaveChanges();//actually save the changes to the database
+                return RedirectToAction("Index");// redirects to index action
+           
+        }
 
     }
 }
