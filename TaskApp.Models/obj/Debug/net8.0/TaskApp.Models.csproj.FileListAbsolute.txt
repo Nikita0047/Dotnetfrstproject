@@ -1,0 +1,12 @@
+D:\DotNet\firstProject\WebApp\TaskApp.Models\bin\Debug\net8.0\TaskApp.Models.deps.json
+D:\DotNet\firstProject\WebApp\TaskApp.Models\bin\Debug\net8.0\TaskApp.Models.dll
+D:\DotNet\firstProject\WebApp\TaskApp.Models\bin\Debug\net8.0\TaskApp.Models.pdb
+D:\DotNet\firstProject\WebApp\TaskApp.Models\obj\Debug\net8.0\TaskApp.Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\DotNet\firstProject\WebApp\TaskApp.Models\obj\Debug\net8.0\TaskApp.Models.AssemblyInfoInputs.cache
+D:\DotNet\firstProject\WebApp\TaskApp.Models\obj\Debug\net8.0\TaskApp.Models.AssemblyInfo.cs
+D:\DotNet\firstProject\WebApp\TaskApp.Models\obj\Debug\net8.0\TaskApp.Models.csproj.CoreCompileInputs.cache
+D:\DotNet\firstProject\WebApp\TaskApp.Models\obj\Debug\net8.0\TaskApp.Models.sourcelink.json
+D:\DotNet\firstProject\WebApp\TaskApp.Models\obj\Debug\net8.0\TaskApp.Models.dll
+D:\DotNet\firstProject\WebApp\TaskApp.Models\obj\Debug\net8.0\refint\TaskApp.Models.dll
+D:\DotNet\firstProject\WebApp\TaskApp.Models\obj\Debug\net8.0\TaskApp.Models.pdb
+D:\DotNet\firstProject\WebApp\TaskApp.Models\obj\Debug\net8.0\ref\TaskApp.Models.dll

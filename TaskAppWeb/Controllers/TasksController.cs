@@ -45,7 +45,7 @@ namespace TaskAppWeb.Controllers
             {
                 return NotFound();
             }
-            return View(taskFromDb);
+            return View(taskFromDb);   
         }
             [HttpPost]
         public IActionResult Edit(TaskList obj)
