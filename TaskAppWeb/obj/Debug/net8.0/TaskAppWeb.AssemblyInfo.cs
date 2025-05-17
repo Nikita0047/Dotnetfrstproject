@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TaskAppWeb")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2d7edd1307760608c43037494676cc904f8df56f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1da04ed133712cba421ef96345699b57d6b3786e")]
 [assembly: System.Reflection.AssemblyProductAttribute("TaskAppWeb")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TaskAppWeb")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
