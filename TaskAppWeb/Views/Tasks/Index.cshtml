@@ -18,7 +18,7 @@
 </div>
 
 @* // made a table  *@
-<table class="table table-bordered table-striped">
+@* <table class="table table-bordered table-striped"> *@
 		@* <thead>
 				<tr>
 					<th>
@@ -41,11 +41,34 @@
 	<div class="task-list">
 		@foreach (var obj in Model.OrderBy(u => u.Priority))
 		{
-			<div class="task-item d-flex justify-content-between align-items-center mb-3 p-3 rounded shadow-sm" style="background-color: steelblue;">
+			<div class="task-item d-flex justify-content-between align-items-center mb-3 p-3 rounded shadow-sm bg-outline-secondary" style="background-color: steelblue;">
 				<div>
-					<h5 class="mb-1">@obj.Name</h5>
-					<p class="mb-0"> @obj.Priority</p>
-					<p class="mb-0">@obj.isCompleted</p>
+					<div class="card mb-1 task-card position-relative" style="cursor: pointer;">
+								<div class="card-body mb-1">
+									<h5 class="mb-1">@obj.Name</h5>
+									<div class="hover-details position-absolute bg-outline-warning border p-2 shadow">
+										<p class="mb-1"><strong>Priority:</strong> @obj.Priority</p>
+									</div>
+								</div>
+					</div>
+						
+					@* <h5 class="mb-1">@obj.Name</h5>
+						<div class="hover-details position-absolute bg-white border p-2 shadow" style="top: 100%; left: 0; display: none; z-index: 10;">
+							<p class="mb-1"><strong>Priority:</strong> @obj.Priority</p>
+						</div> *@
+					@* <p class="mb-0"> @obj.Priority</p> *@
+
+						<form method="post" action="/Tasks/ToggleCompletion">
+							<input type="hidden" name="id" value="@obj.Id" />
+							<input type="checkbox" name="isCompleted" onchange="this.form.submit()" @(obj.isCompleted ? "checked" : "") />
+							<label class="form-check-label ms-1">status</label>
+						</form>
+
+						@* <div class="form-check">
+							<input class="form-check-input btn-outline-secondary" type="checkbox" @(obj.isCompleted ? "checked" : "")/>
+							<label class="form-check-label ">status</label>
+						</div> *@
+					@* <p class="mb-0">@obj.isCompleted</p> *@
 				</div>
 				<div>
 					<div class="btn-group" role="group">

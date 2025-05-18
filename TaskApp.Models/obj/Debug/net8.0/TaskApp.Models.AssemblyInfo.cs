@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TaskApp.Models")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2d7edd1307760608c43037494676cc904f8df56f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2c46e323bc8c317d1e5e5f94f86b9d2bafdf97d9")]
 [assembly: System.Reflection.AssemblyProductAttribute("TaskApp.Models")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TaskApp.Models")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
