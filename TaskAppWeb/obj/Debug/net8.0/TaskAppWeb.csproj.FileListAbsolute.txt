@@ -145,3 +145,4 @@ D:\DotNet\firstProject\WebApp\TaskAppWeb\obj\Debug\net8.0\refint\TaskAppWeb.dll
 D:\DotNet\firstProject\WebApp\TaskAppWeb\obj\Debug\net8.0\TaskAppWeb.pdb
 D:\DotNet\firstProject\WebApp\TaskAppWeb\obj\Debug\net8.0\TaskAppWeb.genruntimeconfig.cache
 D:\DotNet\firstProject\WebApp\TaskAppWeb\obj\Debug\net8.0\ref\TaskAppWeb.dll
+D:\DotNet\firstProject\WebApp\TaskAppWeb\obj\Debug\net8.0\TaskAppWeb.sourcelink.json

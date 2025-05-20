@@ -11,11 +11,13 @@ namespace TaskAppWeb.Data
             : base(options)
         {
         }
+        // adding the DbSet property for TaskList and creating table tasklists
         public DbSet<TaskList> TaskLists { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //base.OnModelCreating(modelBuilder);
+            //seed data in table tasklists
             modelBuilder.Entity<TaskList>().HasData(
                 new TaskList {Id=1, Name= "Do Exercise", Priority = "High", isCompleted = true },
                 new TaskList { Id = 2, Name = "Make Dinner", Priority = "Medium", isCompleted = false },
