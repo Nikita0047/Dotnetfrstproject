@@ -4,3 +4,5 @@ obj/
 *.dll
 *.pdb
 *.cache
+.vs/
+bin/
