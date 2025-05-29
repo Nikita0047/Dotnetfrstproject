@@ -62,15 +62,18 @@ namespace TaskAppWeb.Controllers
             return View(obj);
         }
 
+
         public IActionResult delete(int? id)
         {
             //check if id is null or 0
+
             if (id == null || id == 0)
             {
                 return NotFound();
             }
 
             //check if task with id is present in db or no
+
             TaskList? taskFromDb = _db.TaskLists.Find(id);
             if (taskFromDb == null)
             {
@@ -78,29 +81,22 @@ namespace TaskAppWeb.Controllers
             }
             return View(taskFromDb);
         }
-
-
-
-        [HttpPost, ActionName("Delete")]
-        public IActionResult deletePost(int? id)
+        [HttpPost]
+        [ActionName("Delete")]//this is the name of the action method
+        public IActionResult DeletePOST(int? id)
         {
-            //check if id is null or 0
             TaskList? obj = _db.TaskLists.Find(id);
-             if(obj==null)
-            { 
+            if(obj == null)
+            {
                 return NotFound();
             }
-            /*if (ModelState.IsValid)
-            {*/
-                _db.TaskLists.Remove(obj);
-                _db.SaveChanges();
-                return RedirectToAction("Index");
-           /* }
-            return View(obj);*/
+               _db.TaskLists.Remove(obj);//keep tracks what added to database
+                _db.SaveChanges();//actually save the changes to the database
+                return RedirectToAction("Index");// redirects to index action
+           
+       
         }
 
-
- 
 
     }
 }

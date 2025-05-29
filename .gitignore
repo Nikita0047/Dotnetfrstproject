@@ -1,3 +1,4 @@
+
 .vs/bin/
 obj/
 *.exe
@@ -9,3 +10,4 @@ bin/
 .github/
 **/bin/
 **/obj/
+
