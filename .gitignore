@@ -5,9 +5,10 @@ obj/
 *.dll
 *.pdb
 *.cache
-.vs/
 bin/
 .github/
 **/bin/
 **/obj/
+.vs/
+
 

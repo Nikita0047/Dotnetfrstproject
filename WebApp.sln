@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35919.96 d17.13
+VisualStudioVersion = 17.13.35919.96
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskAppWeb", "TaskAppWeb\TaskAppWeb.csproj", "{FB30828D-9360-487E-B0BC-E5132AECD479}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskApp.Models", "TaskApp.Models\TaskApp.Models.csproj", "{25D7494C-5791-43C0-8628-7B9A22C922A7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{FB30828D-9360-487E-B0BC-E5132AECD479}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB30828D-9360-487E-B0BC-E5132AECD479}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB30828D-9360-487E-B0BC-E5132AECD479}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25D7494C-5791-43C0-8628-7B9A22C922A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25D7494C-5791-43C0-8628-7B9A22C922A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25D7494C-5791-43C0-8628-7B9A22C922A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25D7494C-5791-43C0-8628-7B9A22C922A7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

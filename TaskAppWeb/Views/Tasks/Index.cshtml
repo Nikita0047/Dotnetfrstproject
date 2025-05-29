@@ -6,53 +6,70 @@
 		</div>
 	</div>
 </div>
-
-@* <div class="card-body p-4"> *@
-<div class="row pb-3">
+ @* <div class="card-body p-4">  *@
+<div class="row pb-2">
 	<div class="col-6">
 	</div>
-	<div class="col-6 text-end">
+	<div class="col-12 text-start">
 		<a asp-controller="Tasks" asp-action="Create" class="btn btn-primary">
-			<i class="bi bi-clipboard2-plus-fill"></i> Create New Task
+			<i class="bi bi-clipboard2-plus-fill"></i> Create Task
 		</a>
 	</div>
 </div>
 
 @* // made a table  *@
 <table class="table table-bordered table-striped">
-	<thead>
-		<tr>
-			<th>
-				 Name
-			</th>
-			<th>
-				Priority
-			</th>
-			<th>
-				isCompleted
-			</th>
-		</tr>
-	</thead>
-	<tbody>
-		@* run the foreach loop for iterating through all items persented in table*@
-		@foreach (var obj in Model.OrderBy(u=>u.Priority) )
+		@* <thead>
+				<tr>
+					<th>
+						 Name
+					</th>
+					<th>
+						Priority
+					</th>
+					<th>
+						isCompleted
+					</th>
+					<th>
+						Actions
+					</th>
+				</tr>
+		</thead> *@
+		
+				
+			@* run the foreach loop for iterating through all items persented in table*@
+	<div class="task-list">
+		@foreach (var obj in Model.OrderBy(u => u.Priority))
 		{
-			<tr>
-				<td>@obj.Name</td>
-			    <td>@obj.Priority</td>
-			    <td>@obj.isCompleted</td>
-				@* // we can add button under td  *@
-				<td>
-				<div class="w-35 btn-group" role="group">
-					<a asp-controller="Tasks" asp-action="Edit" asp-route-id="@obj.Id" class="btn btn-outline-secondary mx-2">
-						<i class="bi bi-pencil"></i> 
-					</a>
-					<a asp-controller="Tasks" asp-action="Delete" asp-route-id="@obj.Id" class="btn btn-outline-danger mx-2">
-						<i class="bi bi-trash"></i> 
-					</a>
+			<div class="task-item d-flex justify-content-between align-items-center mb-3 p-3 rounded shadow-sm" style="background-color: steelblue;">
+				<div>
+					<h5 class="mb-1">@obj.Name</h5>
+					<p class="mb-0"> @obj.Priority</p>
+					<p class="mb-0">@obj.isCompleted</p>
 				</div>
-				</td>
-			</tr>  
+				<div>
+					<div class="btn-group" role="group">
+						<button id="btnGroupDrop2-@obj.Id" type="button" class="btn btn-success dropdown-toggle"
+								data-bs-toggle="dropdown" aria-expanded="false">
+							Actions
+						</button>
+						<ul class="dropdown-menu" aria-labelledby="btnGroupDrop2-@obj.Id">
+							<li>
+								<a asp-controller="Tasks" asp-action="Edit" asp-route-id="@obj.Id" class="dropdown-item class=" btn btn-outline-dark"">
+									<i class="bi bi-pencil"></i> Edit
+								</a>
+							</li>
+							<li>
+								<a asp-controller="Tasks" asp-action="Delete" asp-route-id="@obj.Id" class="dropdown-item class=" btn btn-outline-dark"">
+									<i class="bi bi-trash"></i> Delete
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
 		}
-	</tbody>
-</table>
+	</div>
+
+	 @* </tbody> *@
+@* </table> *@
