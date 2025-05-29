@@ -1,6 +1,11 @@
-.vs/
-.github/
-bin/
+.vs/bin/
 obj/
+*.exe
+*.dll
+*.pdb
+*.cache
+.vs/
+bin/
+.github/
 **/bin/
 **/obj/

@@ -27,9 +27,9 @@ namespace TaskAppWeb.Controllers
         {
             if (ModelState.IsValid)
             {
-                _db.TaskLists.Add(obj);
-                _db.SaveChanges();
-                return RedirectToAction("Index");
+                _db.TaskLists.Add(obj);//keep tracks what added to database
+                _db.SaveChanges();//actually save the changes to the database
+                return RedirectToAction("Index");// redirects to index action
             }
             return View(obj);
         }
@@ -97,6 +97,7 @@ namespace TaskAppWeb.Controllers
         }
 
 
+ 
     }
 }
    
