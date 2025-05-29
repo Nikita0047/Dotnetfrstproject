@@ -97,6 +97,20 @@ namespace TaskAppWeb.Controllers
        
         }
 
+        [HttpPost]
+        public ActionResult ToggleCompletion(int id, bool isCompleted)
+        {
+            var task = _db.TaskLists.Find(id); // Use your DbContext name instead of 'db'
+            if (task != null)
+            {
+                task.isCompleted = isCompleted;
+                _db.SaveChanges();
+            }
+
+            return RedirectToAction("Index");
+        }
+
+
 
     }
 }
