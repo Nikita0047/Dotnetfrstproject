@@ -36,10 +36,13 @@ namespace TaskAppWeb.Controllers
 
         public IActionResult Edit(int? id)
         {
-            if (id == null || id == 0)
+            //check if id is null or 0
+            if (id == null || id==0)
             {
                 return NotFound();
             }
+
+            //check if task with id is present in db
             TaskList? taskFromDb = _db.TaskLists.Find(id);
             if (taskFromDb == null)
             {
@@ -47,26 +50,30 @@ namespace TaskAppWeb.Controllers
             }
             return View(taskFromDb);   
         }
-            [HttpPost]
+        [HttpPost]
         public IActionResult Edit(TaskList obj)
         {
             if (ModelState.IsValid)
             {
-                _db.TaskLists.Update(obj);//keep tracks what added to database
-                _db.SaveChanges();//actually save the changes to the database
-                return RedirectToAction("Index");// redirects to index action
+                _db.TaskLists.Add(obj);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
             }
-            
-            
             return View(obj);
         }
 
-        public IActionResult Delete(int? id)
+
+        public IActionResult delete(int? id)
         {
+            //check if id is null or 0
+
             if (id == null || id == 0)
             {
                 return NotFound();
             }
+
+            //check if task with id is present in db or no
+
             TaskList? taskFromDb = _db.TaskLists.Find(id);
             if (taskFromDb == null)
             {
@@ -87,7 +94,9 @@ namespace TaskAppWeb.Controllers
                 _db.SaveChanges();//actually save the changes to the database
                 return RedirectToAction("Index");// redirects to index action
            
+       
         }
+
 
     }
 }
