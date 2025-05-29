@@ -6,3 +6,6 @@ obj/
 *.cache
 .vs/
 bin/
+.github/
+**/bin/
+**/obj/

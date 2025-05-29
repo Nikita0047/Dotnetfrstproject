@@ -33,14 +33,71 @@ namespace TaskAppWeb.Controllers
             }
             return View(obj);
         }
-/*
+
         public IActionResult Edit(int? id)
         {
+            //check if id is null or 0
+            if (id == null || id==0)
+            {
+                return NotFound();
+            }
+
+            //check if task with id is present in db
+            TaskList? taskFromDb = _db.TaskLists.Find(id);
+            if (taskFromDb == null)
+            {
+                return NotFound();
+            }
+            return View(taskFromDb);
+        }
+        [HttpPost]
+        public IActionResult Edit(TaskList obj)
+        {
+            if (ModelState.IsValid)
+            {
+                _db.TaskLists.Add(obj);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(obj);
+        }
+
+        public IActionResult delete(int? id)
+        {
+            //check if id is null or 0
             if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+
+            //check if task with id is present in db or not
+            TaskList? taskFromDb = _db.TaskLists.Find(id);
+            if (taskFromDb == null)
+            {
+                return NotFound();
+            }
+            return View(taskFromDb);
+        }
+        [HttpPost, ActionName("Delete")]
+        public IActionResult deletePost(int? id)
+        {
+            //check if id is null or 0
+            TaskList? obj = _db.TaskLists.Find(id);
+             if(obj==null)
+            { 
+                return NotFound();
+            }
+            /*if (ModelState.IsValid)
+            {*/
+                _db.TaskLists.Remove(obj);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+           /* }
+            return View(obj);*/
+        }
 
 
-        }*/
-            
+ 
     }
 }
    
