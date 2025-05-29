@@ -1,1 +1,11 @@
+.vs/bin/
+obj/
+*.exe
+*.dll
+*.pdb
+*.cache
+bin/
+.github/
+**/bin/
+**/obj/
 .vs/
