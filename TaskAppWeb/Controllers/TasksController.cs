@@ -70,7 +70,7 @@ namespace TaskAppWeb.Controllers
                 return NotFound();
             }
 
-            //check if task with id is present in db or not
+            //check if task with id is present in db or no
             TaskList? taskFromDb = _db.TaskLists.Find(id);
             if (taskFromDb == null)
             {
@@ -78,6 +78,9 @@ namespace TaskAppWeb.Controllers
             }
             return View(taskFromDb);
         }
+
+
+
         [HttpPost, ActionName("Delete")]
         public IActionResult deletePost(int? id)
         {
@@ -98,6 +101,7 @@ namespace TaskAppWeb.Controllers
 
 
  
+
     }
 }
    
